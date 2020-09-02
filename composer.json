@@ -1,0 +1,18 @@
+{
+    "name": "dominicvonk/collection",
+    "description": "Array Collection",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dominic Vonk",
+            "email": "dominic@vonk.io"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "DominicVonk\\": "src/"
+        }
+    }
+}
