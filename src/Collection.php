@@ -2,7 +2,7 @@
 
 namespace DominicVonk;
 
-class Collection implements \Iterator
+class Collection implements \Iterator, \Countable
 {
     private $array = [];
     private $position = 0;
@@ -57,6 +57,15 @@ class Collection implements \Iterator
         $arr = array_values($this->array);
         usort($arr, $cmp_function);
         return new Collection($arr);
+    }
+    public function spaceSort($column, $asc = \SORT_ASC)
+    {
+        if ($asc === \SORT_ASC) {
+            return $this->sort(fn ($a, $b) => $a[$column] <=> $b[$column]);
+        } else {
+
+            return $this->sort(fn ($a, $b) => $b[$column] <=> $a[$column]);
+        }
     }
     public function first()
     {
